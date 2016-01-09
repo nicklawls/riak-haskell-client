@@ -19,6 +19,7 @@ module Network.Riak.Tag
 
 import Data.Binary.Put (Put, putWord8)
 import Network.Riak.Protocol.DeleteRequest
+import Network.Riak.Protocol.DtUpdateRequest
 import Network.Riak.Protocol.ErrorResponse
 import Network.Riak.Protocol.GetBucketRequest
 import Network.Riak.Protocol.GetBucketResponse
@@ -223,6 +224,16 @@ instance Tagged MapReduce where
 instance Response MapReduce
 
 instance Exchange MapReduceRequest MapReduce
+
+
+instance Tagged DtUpdateRequest where
+    messageTag _ = Types.DtUpdateRequest
+
+instance Request DtUpdateRequest where
+    expectedResponse _ = Types.DtUpdateResponse
+
+instance Response DtUpdateRequest
+
 
 putTag :: MessageTag -> Put
 putTag = putWord8 . fromIntegral . fromEnum
