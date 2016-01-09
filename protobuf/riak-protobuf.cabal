@@ -20,6 +20,7 @@ extra-source-files:
   src/riak.proto
   src/riak_kv.proto
   src/riak_search.proto
+  src/riak_dt.proto
   src/riakextra.proto
 
 cabal-version:       >=1.8
@@ -28,6 +29,8 @@ library
   hs-source-dirs: src
 
   exposed-modules:
+    Network.Riak.Protocol.AuthRequest
+    Network.Riak.Protocol.BucketKeyPreflistItem
     Network.Riak.Protocol.BucketProps
     Network.Riak.Protocol.BucketProps.ReplMode
     Network.Riak.Protocol.CSBucketRequest
@@ -36,9 +39,17 @@ library
     Network.Riak.Protocol.Content
     Network.Riak.Protocol.CounterGetRequest
     Network.Riak.Protocol.CounterGetResponse
+    Network.Riak.Protocol.CounterOp
     Network.Riak.Protocol.CounterUpdateRequest
     Network.Riak.Protocol.CounterUpdateResponse
     Network.Riak.Protocol.DeleteRequest
+    Network.Riak.Protocol.DtFetchRequest
+    Network.Riak.Protocol.DtFetchResponse
+    Network.Riak.Protocol.DtFetchResponse.DataType
+    Network.Riak.Protocol.DtOp
+    Network.Riak.Protocol.DtUpdateRequest
+    Network.Riak.Protocol.DtUpdateResponse
+    Network.Riak.Protocol.DtValue
     Network.Riak.Protocol.ErrorResponse
     Network.Riak.Protocol.GetBucketRequest
     Network.Riak.Protocol.GetBucketResponse
@@ -56,8 +67,14 @@ library
     Network.Riak.Protocol.ListBucketsResponse
     Network.Riak.Protocol.ListKeysRequest
     Network.Riak.Protocol.ListKeysResponse
+    Network.Riak.Protocol.MapEntry
+    Network.Riak.Protocol.MapField
+    Network.Riak.Protocol.MapField.MapFieldType
+    Network.Riak.Protocol.MapOp
     Network.Riak.Protocol.MapReduce
     Network.Riak.Protocol.MapReduceRequest
+    Network.Riak.Protocol.MapUpdate
+    Network.Riak.Protocol.MapUpdate.FlagOp
     Network.Riak.Protocol.ModFun
     Network.Riak.Protocol.Pair
     Network.Riak.Protocol.PingRequest
@@ -70,6 +87,7 @@ library
     Network.Riak.Protocol.ServerInfo
     Network.Riak.Protocol.SetBucketRequest
     Network.Riak.Protocol.SetClientIDRequest
+    Network.Riak.Protocol.SetOp
 
   other-modules:
     Network.Riak.Protocol
